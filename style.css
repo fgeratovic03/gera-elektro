@@ -1,0 +1,446 @@
+ body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0; background: #f9f9f9; color: #121212;
+      line-height: 1.5;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      scroll-behavior: smooth;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    header {
+      background: #121212;
+      color: #f0a500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 0.6s ease forwards;
+      transform: translateY(-100%);
+    }
+    @keyframes slideDown { to { transform: translateY(0); } }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    nav ul li a {
+      color: #f0a500;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #fff;
+      outline: none;
+    }
+
+    /* Poboljsani hamburger meni */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1100;
+      background: transparent;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: #f0a500;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    #mobileMenu {
+      display: none;
+      flex-direction: column;
+      background: #121212;
+      position: absolute;
+      top: 60px;
+      right: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      animation: fadeIn 0.4s ease forwards;
+      width: 180px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 1050;
+    }
+    #mobileMenu.show {
+      display: flex;
+    }
+    #mobileMenu a {
+      color: #f0a500;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    #mobileMenu a:last-child {
+      margin-bottom: 0;
+    }
+    #mobileMenu a:hover,
+    #mobileMenu a:focus {
+      color: #fff;
+      outline: none;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(90deg, #f0a500cc, #f0a500cc), url('https://picsum.photos/id/1018/1200/500') center/cover no-repeat;
+      color: #121212;
+      border-radius: 8px;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      box-shadow: 0 5px 15px rgba(240,165,0,0.3);
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #121212;
+      text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #121212cc;
+      text-shadow: 1px 1px 4px rgba(255,255,255,0.6);
+    }
+
+    #about {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1.4s ease forwards;
+      opacity: 0;
+    }
+    #about h2 {
+      color: #121212;
+      border-bottom: 3px solid #f0a500;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    #about p {
+      font-size: 1.1rem;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      color: #121212;
+      border-bottom: 3px solid #f0a500;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    /* Usluge kartice iste visine */
+    .service-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.7s ease forwards;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+    }
+    .service-card .service-icon {
+      font-size: 3rem;
+      color: #f0a500;
+      margin-bottom: 0.8rem;
+      flex-shrink: 0;
+    }
+    .service-card .service-title {
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      flex-shrink: 0;
+    }
+    .service-card .service-desc {
+      font-size: 0.95rem;
+      color: #555;
+      flex-grow: 1;
+    }
+    .service-card:hover,
+    .service-card:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(240,165,0,0.3);
+      outline: none;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+
+    /* Galerija sa fiksnim gridom za 6 slika */
+    #galleryGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+    }
+    @media (min-width: 992px) {
+      #galleryGrid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+    #galleryGrid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #galleryGrid img:hover,
+    #galleryGrid img:focus {
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    /* Pagination za galeriju */
+    #pagination {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    #pagination button {
+      background: #f0a500;
+      border: none;
+      color: #121212;
+      font-weight: 700;
+      padding: 0.4rem 0.8rem;
+      margin: 0 0.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #pagination button:hover,
+    #pagination button:focus {
+      background-color: #d18b00;
+      outline: none;
+    }
+    #pagination button[disabled] {
+      background-color: #f0a500aa;
+      cursor: default;
+      color: #444;
+    }
+
+    /* Kontakt forma */
+    #contactForm {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 5px 20px rgba(240,165,0,0.2);
+      animation: fadeIn 1.7s ease forwards;
+      opacity: 0;
+    }
+    #contactForm label {
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    #contactForm input,
+    #contactForm textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+    #contactForm input:focus,
+    #contactForm textarea:focus {
+      border-color: #f0a500;
+      outline: none;
+      box-shadow: 0 0 5px #f0a500cc;
+    }
+    #contactForm button {
+      margin-top: 1.5rem;
+      background: #f0a500;
+      border: none;
+      color: #121212;
+      font-weight: 700;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #contactForm button:hover,
+    #contactForm button:focus {
+      background-color: #d18b00;
+      outline: none;
+    }
+
+    /* Plutajuće dugme za poziv levo */
+    #callButton {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #f0a500;
+      color: #121212;
+      padding: 0.75rem 1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(240,165,0,0.6);
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 1100;
+    }
+    #callButton:hover,
+    #callButton:focus {
+      background-color: #d18b00;
+      outline: none;
+    }
+
+    /* Scroll to top button desno */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #121212;
+      color: #f0a500;
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      font-size: 1.2rem;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+      z-index: 1100;
+    }
+    #scrollTopBtn:hover,
+    #scrollTopBtn:focus {
+      background-color: #333;
+      outline: none;
+    }
+
+    .accordion-button {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #004085; /* tamnoplava za pitanja */
+  background-color: #e9f5ff; /* svetloplava pozadina za pitanja */
+  border-radius: 0.25rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #cfe2ff; /* malo tamnija pozadina kad je otvoreno */
+  color: #002752;
+}
+
+.accordion-body {
+  font-size: 1rem;
+  color: #333333; /* tamnosiva za odgovor */
+  background-color: #f8f9fa; /* svetlo siva pozadina za odgovore */
+  border-left: 3px solid #004085; /* plava linija sa leve strane */
+  padding-left: 1rem;
+}
+
+    /* Footer */
+    footer {
+      background: #121212;
+      color: #f0a500;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    footer .social-icons a {
+      color: #f0a500;
+      font-size: 1.5rem;
+      margin: 0 0.8rem;
+      transition: color 0.3s ease;
+    }
+    footer .social-icons a:hover,
+    footer .social-icons a:focus {
+      color: #fff;
+      outline: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      #galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      #galleryGrid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }

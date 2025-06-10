@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GERA ELEKTRO - Elektroinstalacije</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo" tabindex="0">GERA ELEKTRO</div>
+  <nav>
+    <ul>
+      <li><a href="#about">O nama</a></li>
+      <li><a href="#services">Usluge</a></li>
+      <li><a href="#gallery">Galerija</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+  <button class="hamburger" aria-label="Meni" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <div id="mobileMenu" role="menu" tabindex="-1">
+    <a href="#about" role="menuitem" tabindex="0">O nama</a>
+    <a href="#services" role="menuitem" tabindex="0">Usluge</a>
+    <a href="#gallery" role="menuitem" tabindex="0">Galerija</a>
+    <a href="#contact" role="menuitem" tabindex="0">Kontakt</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Naslovna sekcija" tabindex="0">
+  <h1>Profesionalne Elektroinstalacije</h1>
+  <p>Brza, sigurna i kvalitetna usluga elektroinstalacija za vaš dom i poslovni prostor. Naš tim stručnjaka koristi najsavremenije tehnologije i standarde kako bi vaša instalacija bila pouzdana i dugotrajna.</p>
+  <p>Bilo da vam treba nova instalacija, popravka ili modernizacija, tu smo da vam pomognemo.</p>
+  <a href="#services" class="btn btn-primary mt-3" role="button">Pogledajte naše usluge</a>
+</section>
+
+<section id="about" tabindex="0" aria-labelledby="aboutTitle">
+  <h2 id="aboutTitle">O nama</h2>
+  <p><strong>GERA ELEKTRO</strong> je firma sa dugogodišnjim iskustvom u elektroinstalacionim uslugama, poznata po kvalitetu i pouzdanosti. Naš stručni tim elektroinženjera i majstora koristi najnovije tehnologije i poštuje sve sigurnosne standarde.</p>
+
+  <p>Radimo na projektovanju i izvođenju elektroinstalacija za stambene i poslovne objekte, hitnim popravkama, kao i ugradnji modernih sistema za rasvetu i automatizaciju. Takođe se bavimo i instalacijom solarnih panela i energetski efikasnih rešenja.</p>
+
+  <p>Posebnu pažnju posvećujemo individualnom pristupu i savetovanju kako bismo klijentima ponudili najbolja i najbezbednija rešenja. Naša podrška traje i nakon završetka radova, kroz servis i redovne preglede.</p>
+
+  <p>Izaberite <strong>GERA ELEKTRO</strong> za pouzdanog partnera u svim elektroinstalacionim potrebama.</p>
+</section>
+
+
+
+<section id="services" tabindex="0" aria-labelledby="servicesTitle">
+  <h2 class="section-title" id="servicesTitle">Naše usluge</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <article class="service-card" tabindex="0">
+        <i class="fas fa-bolt service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Instalacije</h3>
+        <p class="service-desc">Kompletne elektroinstalacije za stanove, kuće i poslovne prostore.</p>
+      </article>
+    </div>
+    <div class="col">
+      <article class="service-card" tabindex="0">
+        <i class="fas fa-plug service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Popravke</h3>
+        <p class="service-desc">Brze i efikasne popravke elektro kvarova i havarija.</p>
+      </article>
+    </div>
+    <div class="col">
+      <article class="service-card" tabindex="0">
+        <i class="fas fa-lightbulb service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Ugradnja Rasvete</h3>
+        <p class="service-desc">Ugradnja i modernizacija rasvetnih sistema i LED rešenja.</p>
+      </article>
+    </div>
+
+    <!-- Nove kartice sa električnim ikonama -->
+    <div class="col">
+      <article class="service-card" tabindex="0">
+        <i class="fas fa-battery-full service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Održavanje Baterijskih Sistema</h3>
+        <p class="service-desc">Održavanje i provera baterijskih sistema i UPS uređaja.</p>
+      </article>
+    </div>
+    <div class="col">
+      <article class="service-card" tabindex="0">
+        <i class="fas fa-solar-panel service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Solarni Sistemi</h3>
+        <p class="service-desc">Instalacija i održavanje solarnih panela i sistema za obnovljivu energiju.</p>
+      </article>
+    </div>
+    <div class="col">
+      <article class="service-card" tabindex="0">
+        <i class="fas fa-cogs service-icon" aria-hidden="true"></i>
+        <h3 class="service-title">Automatika i Kontrola</h3>
+        <p class="service-desc">Ugradnja sistema automatizacije i upravljanja elektroinstalacijama.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  <section id="gallery" tabindex="0" aria-labelledby="galleryTitle" style="margin-top: 3rem;">
+    <h2 class="section-title" id="galleryTitle">Galerija</h2>
+    <div id="galleryGrid" aria-live="polite" aria-relevant="additions removals"></div>
+    <div id="pagination" aria-label="Navigacija kroz galeriju"></div>
+  </section>
+
+<div id="imageModal" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+  <button id="modalClose" aria-label="Zatvori uvećanu sliku" style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:2rem; cursor:pointer;">&times;</button>
+
+  <button id="modalPrev" aria-label="Prethodna slika" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:white; font-size:3rem; cursor:pointer;">&#10094;</button>
+  
+  <img id="modalImage" src="" alt="" style="max-width:90%; max-height:90%; box-shadow:0 0 10px white;">
+
+  <button id="modalNext" aria-label="Sledeća slika" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:white; font-size:3rem; cursor:pointer;">&#10095;</button>
+</div>
+
+<section id="faq" tabindex="0" aria-labelledby="faqTitle" style="margin-top: 3rem;">
+  <h2 class="section-title" id="faqTitle">Često postavljana pitanja (FAQ)</h2>
+  <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faqHeading1">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+          Koje usluge elektroinstalacija nudite?
+        </button>
+      </h3>
+      <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Nudimo kompletne elektroinstalacije za stanove, kuće i poslovne prostore, popravke kvarova, ugradnju rasvete i instalaciju zaštitnih sistema.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faqHeading2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+          Koliko traje prosečna instalacija u stanu?
+        </button>
+      </h3>
+      <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Trajanje zavisi od veličine i složenosti posla, ali prosečna instalacija traje od 2 do 5 radnih dana.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faqHeading3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+          Koje su cene vaših usluga?
+        </button>
+      </h3>
+      <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Cene zavise od obima i vrste posla. Za preciznu ponudu, kontaktirajte nas putem kontakt forme ili telefonom.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="faqHeading4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+          Da li nudite garanciju na izvršene radove?
+        </button>
+      </h3>
+      <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Da, na sve naše elektroinstalacione usluge dajemo garanciju u skladu sa zakonskim propisima i ugovorom.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="contact" tabindex="0" aria-labelledby="contactTitle" style="margin-top: 3rem;">
+    <h2 class="section-title" id="contactTitle">Kontakt</h2>
+    <form id="contactForm" novalidate aria-describedby="formMessage">
+      <label for="name">Ime i prezime</label>
+      <input type="text" id="name" name="name" required aria-required="true" placeholder="Vaše ime i prezime" />
+
+      <label for="email">Email adresa</label>
+      <input type="email" id="email" name="email" required aria-required="true" placeholder="Vaša email adresa" />
+
+      <label for="phone">Telefon</label>
+      <input type="tel" id="phone" name="phone" placeholder="Vaš broj telefona" pattern="[\d\s\+\-]+" />
+
+      <label for="message">Poruka</label>
+      <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Vaša poruka"></textarea>
+
+      <button type="submit">Pošalji</button>
+      <div id="formMessage" role="alert" aria-live="assertive" style="margin-top:1rem;color:#d00;"></div>
+    </form>
+  </section>
+</main>
+
+<!-- Dugme za poziv -->
+<a href="tel:+381600000000" id="callButton" aria-label="Pozovi nas">
+  <i class="fas fa-phone"></i>
+</a>
+
+<!-- Scroll to top dugme -->
+<button id="scrollTopBtn" aria-label="Idi na vrh">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<footer>
+  <p>&copy; 2025 GERA ELEKTRO. Sva prava zadržana.</p>
+  <div class="social-icons" role="list" aria-label="Društvene mreže">
+    <a href="https://www.facebook.com/geraelektro" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/geraelektro" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/geraelektro" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
