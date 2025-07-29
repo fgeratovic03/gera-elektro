@@ -45,8 +45,6 @@
       color: #fff;
       outline: none;
     }
-
-    /* Poboljsani hamburger meni */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -175,8 +173,6 @@
       font-weight: 700;
       font-size: 1.8rem;
     }
-
-    /* Usluge kartice iste visine */
     .service-card {
       background: #fff;
       border-radius: 8px;
@@ -225,8 +221,6 @@
         transform: translateY(20px);
       }
     }
-
-    /* Galerija sa fiksnim gridom za 6 slika */
     #galleryGrid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -253,8 +247,6 @@
       transform: scale(1.05);
       outline: none;
     }
-
-    /* Pagination za galeriju */
     #pagination {
       margin-top: 1rem;
       text-align: center;
@@ -280,8 +272,6 @@
       cursor: default;
       color: #444;
     }
-
-    /* Kontakt forma */
     #contactForm {
       max-width: 600px;
       margin: 0 auto;
@@ -329,8 +319,6 @@
       background-color: #d18b00;
       outline: none;
     }
-
-    /* Plutajuće dugme za poziv levo */
     #callButton {
       position: fixed;
       bottom: 20px;
@@ -353,8 +341,6 @@
       background-color: #d18b00;
       outline: none;
     }
-
-    /* Scroll to top button desno */
     #scrollTopBtn {
       position: fixed;
       bottom: 20px;
@@ -383,25 +369,23 @@
     .accordion-button {
   font-weight: 600;
   font-size: 1.1rem;
-  color: #004085; /* tamnoplava za pitanja */
-  background-color: #e9f5ff; /* svetloplava pozadina za pitanja */
+  color: #004085;
+  background-color: #e9f5ff;
   border-radius: 0.25rem;
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #cfe2ff; /* malo tamnija pozadina kad je otvoreno */
+  background-color: #cfe2ff; 
   color: #002752;
 }
 
 .accordion-body {
   font-size: 1rem;
-  color: #333333; /* tamnosiva za odgovor */
-  background-color: #f8f9fa; /* svetlo siva pozadina za odgovore */
-  border-left: 3px solid #004085; /* plava linija sa leve strane */
+  color: #333333; 
+  background-color: #f8f9fa;
+  border-left: 3px solid #004085; 
   padding-left: 1rem;
 }
-
-    /* Footer */
     footer {
       background: #121212;
       color: #f0a500;
@@ -421,7 +405,6 @@
       outline: none;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
       nav ul {
         display: none;
