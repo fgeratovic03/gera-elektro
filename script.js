@@ -1,4 +1,4 @@
- // Hamburger meni toggle
+
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
 
@@ -12,7 +12,6 @@
     }
   });
 
-  // Scroll to top dugme prikaz i funkcija
   const scrollTopBtn = document.getElementById('scrollTopBtn');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
@@ -25,11 +24,9 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Galerija sa paginacijom
   const galleryGrid = document.getElementById('galleryGrid');
   const pagination = document.getElementById('pagination');
 
-  // Primer slika (možeš promeniti URL slike na svoje)
 const galleryImages = [];
 for (let i = 1; i <= 12; i++) {
   galleryImages.push(`slike/posao${i}.jpg`);
@@ -60,7 +57,6 @@ for (let i = 1; i <= 12; i++) {
   function renderPagination(page) {
     pagination.innerHTML = '';
 
-    // Prev dugme
     const prevBtn = document.createElement('button');
     prevBtn.textContent = 'Prethodno';
     prevBtn.disabled = page === 1;
@@ -73,7 +69,6 @@ for (let i = 1; i <= 12; i++) {
     });
     pagination.appendChild(prevBtn);
 
-    // Brojevi stranica
     for(let i = 1; i <= totalPages; i++) {
       const pageBtn = document.createElement('button');
       pageBtn.textContent = i;
@@ -88,7 +83,6 @@ for (let i = 1; i <= 12; i++) {
       pagination.appendChild(pageBtn);
     }
 
-    // Next dugme
     const nextBtn = document.createElement('button');
     nextBtn.textContent = 'Sledeće';
     nextBtn.disabled = page === totalPages;
@@ -104,7 +98,6 @@ for (let i = 1; i <= 12; i++) {
 
   renderGalleryPage(currentPage);
 
-  // Kontakt forma - jednostavna validacija i poruka (možeš povezati sa backendom)
   const form = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
 
@@ -116,9 +109,6 @@ for (let i = 1; i <= 12; i++) {
       return;
     }
     formMessage.style.color = '#d00';
-
-    // Ovde možeš poslati podatke ajax-om ili fetch-om ka serveru
-    // Za sada samo simuliramo uspešnu prijavu:
     formMessage.style.color = 'green';
     formMessage.textContent = 'Hvala na poruci! Odgovorićemo vam uskoro.';
 
@@ -133,7 +123,6 @@ const modalNext = document.getElementById('modalNext');
 
 let currentImageIndex = 0;
 
-// Otvori modal sa slikom i zapamti indeks
 function openModal(src, alt, index) {
   currentImageIndex = index;
   modalImage.src = src;
@@ -143,7 +132,6 @@ function openModal(src, alt, index) {
   modalClose.focus();
 }
 
-// Zatvori modal
 function closeModal() {
   imageModal.style.display = 'none';
   imageModal.setAttribute('aria-hidden', 'true');
@@ -151,14 +139,12 @@ function closeModal() {
   modalImage.alt = '';
 }
 
-// Prikazi prethodnu sliku u galeriji
 function showPrevImage() {
   currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
   modalImage.src = galleryImages[currentImageIndex];
   modalImage.alt = `Galerija slika ${currentImageIndex + 1}`;
 }
 
-// Prikazi sledecu sliku u galeriji
 function showNextImage() {
   currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
   modalImage.src = galleryImages[currentImageIndex];
@@ -169,17 +155,14 @@ modalClose.addEventListener('click', closeModal);
 modalPrev.addEventListener('click', showPrevImage);
 modalNext.addEventListener('click', showNextImage);
 
-// Klik na overlay zatvara modal
 imageModal.addEventListener('click', (e) => {
   if (e.target === imageModal) closeModal();
 });
 
-// ESC zatvara modal
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && imageModal.style.display === 'flex') {
     closeModal();
   }
-  // Dodaj tastaturne strelice za navigaciju slika
   if (imageModal.style.display === 'flex') {
     if (e.key === 'ArrowLeft') {
       showPrevImage();
@@ -189,8 +172,6 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
-
-// Dodaj listener-e na slike da otvore modal sa indeksom
 function addModalListeners() {
   const imgs = galleryGrid.querySelectorAll('img');
   imgs.forEach((img, index) => {
@@ -204,7 +185,6 @@ function addModalListeners() {
   });
 }
 
-// Prepakuj renderGalleryPage da pozove addModalListeners
 const originalRenderGalleryPage = renderGalleryPage;
 renderGalleryPage = function(page) {
   originalRenderGalleryPage(page);
